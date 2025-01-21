@@ -39,3 +39,9 @@ th {
 	bottom: 50%;
 	z-index: 100;
 }
+
+table,
+td,
+th {
+	border-collapse: collapse;
+}

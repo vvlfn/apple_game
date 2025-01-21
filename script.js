@@ -1,32 +1,38 @@
-function GenerateGrid() {
-	let table = document.getElementById("game_table");
-	table.innerHTML = "";
-	for (let row = 0; row < 5; row++) {
-		let tr = document.createElement("tr");
-		for (let cell = 0; cell < 10; cell++) {
-			let td = document.createElement("td");
-			td.className = "apple_cell";
-			tr.appendChild(td);
-			console.log(row, cell);
+let table;
+let row_amount = 7;
+let row_size = 15;
+
+function GenerateAppleTable() {
+	let table = [];
+	for (let y = 0; y < row_amount; y++) {
+		let row = [];
+		for (let x = 0; x < row_size; x++) {
+			let value = Math.floor(Math.random() * 9) + 1;
+			row.push(value);
 		}
-		table.appendChild(tr);
+		table.push(row);
 	}
-	cells = document.querySelectorAll(".apple_cell");
-	cells.forEach((cell) => {
-		// generate apple img
-		let img = document.createElement("img");
-		let value = Math.floor(Math.random() * 9) + 1;
-		img.setAttribute("src", `./assets/apple${value}.png`);
-		img.setAttribute("class", "apple_img");
-		img.setAttribute("draggable", "false");
+	return table;
+}
 
-		// generate apple value
-		// let text = document.createElement("p");
-		// text.setAttribute("class", "apple_value");
-		// text.innerHTML = ;
-
-		// append both to every cell
-		cell.appendChild(img);
-		// cell.appendChild(text);
+function GenerateGrid() {
+	table = GenerateAppleTable();
+	let html_table = document.getElementById("game_table");
+	table.forEach((y) => {
+		let row = document.createElement("tr");
+		// console.log(typeof row);
+		y.forEach((value) => {
+			let cell = document.createElement("td");
+			let img = document.createElement("img");
+			img.setAttribute("src", `./assets/apple${value}.png`);
+			img.setAttribute("class", "apple_img");
+			img.setAttribute("draggable", "false");
+			img.setAttribute("name", value);
+			cell.appendChild(img);
+			row.appendChild(cell);
+		});
+		html_table.appendChild(row);
 	});
 }
+
+document.onclick = function () {};
