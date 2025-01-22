@@ -7,13 +7,20 @@
 		<script src="./script.js"></script>
 		<link rel="stylesheet" href="./style.css" />
 	</head>
-	<body>
-		<header id="title"><h1>Apple game</h1></header>
+	<body onload="PlaceholderGrid()">
+		<header id="title">
+			<h1>Apple game</h1>
+		</header>
 		<main>
-			<button onclick="GenerateGrid()">Stwórz</button>
-			<button onclick="GetAppleValues()">Weź</button>
 			<div id="game_window"><table id="game_table"></table></div>
+			<h2 id="score">Score: 0</h2>
+			<button onclick="StartGame()" id="start_button">Graj</button>
 		</main>
-		<footer><p>Paweł Przybylski 4i</p></footer>
+		<div id="timer">
+			<div id="timer_bg">
+				<div id="timer_val"></div>
+			</div>
+		</div>
+		<footer><p>Paweł Przybylski 4i/1 2025</p></footer>
 	</body>
 </html>
