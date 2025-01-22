@@ -184,3 +184,20 @@ function GameOver() {
 function HideOverlay() {
 	document.getElementById("overlay").style.display = "none";
 }
+
+function ChangeVolume() {
+	let volume = document.getElementById("volume").value;
+	click_sound.volume = volume;
+}
+
+function ShowExplain() {
+	document.getElementById("overlay").style.display = "block";
+	document.getElementById("ending_screen").style.display = "none";
+	document.getElementById("explanation").style.display = "flex";
+}
+
+function HideExplain() {
+	document.getElementById("overlay").style.display = "none";
+	document.getElementById("ending_screen").style.display = "flex";
+	document.getElementById("explanation").style.display = "none";
+}

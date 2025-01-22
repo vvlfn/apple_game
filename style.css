@@ -12,7 +12,7 @@ body {
 }
 
 footer {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	left: 0;
 }
@@ -59,7 +59,16 @@ th {
 	font-size: 150%;
 	font-weight: bold;
 }
-
+#vol_controls {
+	margin: 15px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#vol_controls > label {
+	font-weight: bold;
+	margin: 0 15px;
+}
 #timer {
 	width: 15px;
 	position: absolute;
@@ -99,6 +108,7 @@ th {
 }
 #ending_screen * {
 	text-align: center;
+	font-size: 200%;
 }
 #ending_screen > * {
 	margin: 10px;
@@ -106,9 +116,40 @@ th {
 #overlay {
 	width: 100%;
 	height: 100%;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	background-color: #0005;
 	display: none;
+}
+
+.apple_icon {
+	height: 75%;
+}
+#explanation {
+	margin: 15% auto;
+	width: 45%;
+	padding: 25px;
+	background-color: #fff;
+	border-radius: 15px;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+#explanation > * {
+	margin: 10px;
+	font-size: 150%;
+	text-align: justify;
+}
+
+#explain {
+	float: left;
+}
+#explain::after {
+	clear: both;
+}
+#explain:hover {
+	cursor: pointer;
+	color: white;
 }

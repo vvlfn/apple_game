@@ -10,12 +10,21 @@
 	</head>
 	<body onload="PlaceholderGrid()">
 		<header id="title">
+			<img src="./assets/apple.png" class="apple_icon" alt="apple" />
 			<h1>Apple game</h1>
+			<img src="./assets/apple.png" class="apple_icon" alt="apple" />
+			<h1 onclick="ShowExplain()" id="explain">?</h1>
 		</header>
 		<main>
 			<div id="game_window"><table id="game_table"></table></div>
 			<h2 id="score">Score: 0</h2>
-			<button onclick="StartGame()" id="start_button">Graj</button>
+			<div id="controls">
+				<button onclick="StartGame()" id="start_button">Graj</button>
+				<div id="vol_controls">
+					<label for="volume">Głośność:</label>
+					<input type="range" id="volume" min="0" max="1" step="0.1" value="0.5" oninput="ChangeVolume()" />
+				</div>
+			</div>
 		</main>
 		<div id="timer">
 			<div id="timer_bg">
@@ -29,6 +38,17 @@
 					ea, impedit corrupti autem aperiam voluptates provident saepe?
 				</p>
 				<button onclick="HideOverlay()" id="hide_button">Schowaj</button>
+			</div>
+			<div id="explanation">
+				<p>
+					Gra polega na klikaniu w jabłka w taki sposób, aby suma ich była równa 10. Wtedy wszystkie zaznaczone jabłka
+					znikają, a ich ilość jest dodawana do wyniku. Trzeba zdobyć jak największy wynik w 60 sekund. Można łączyć
+					przez przerwy, gdzie nie ma żadnych jabłek oraz zaczynać od miejsc, gdzie nie ma jabłek. Jest dodatkowa kara,
+					jeśli suma się nie zgadza.
+					<br />
+					Gra na podstawie gry z tej <a href="https://en.gamesaien.com/game/fruit_box/" target="_blank"> strony </a>
+				</p>
+				<button onclick="HideExplain()" id="hide_button">Schowaj</button>
 			</div>
 		</div>
 		<footer><p>Paweł Przybylski 4i/1 2025</p></footer>
