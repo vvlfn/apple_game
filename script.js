@@ -24,6 +24,7 @@ function GenerateAppleTable() {
 		}
 		table.push(row);
 	}
+
 	return table;
 }
 
@@ -120,7 +121,6 @@ function RemoveApples() {
 		selected_apples.forEach((apple) => {
 			let x = apple[0];
 			let y = apple[1];
-			// document.getElementById(`${x}-${y}`).style.visibility = "hidden";
 			document.getElementById(`${x}-${y}`).setAttribute("src", "./assets/empty.png");
 			document.getElementById(`${x}-${y}`).setAttribute("data-value", 0);
 			document.getElementById(`${x}-${y}`).innerHTML = "";
@@ -162,7 +162,7 @@ setInterval(() => {
 	if (timer > game_length) {
 		game_running = false;
 		timer = 0;
-		PlaceholderGrid();
+		GameOver();
 	}
 }, call_delay * 1000);
 
@@ -172,4 +172,15 @@ function PlayAudio(audio) {
 	} else {
 		audio.currentTime = 0;
 	}
+}
+
+function GameOver() {
+	PlaceholderGrid();
+
+	document.getElementById("overlay").style.display = "block";
+	document.getElementById("end_text").innerHTML = `Koniec gry! <br> Twój wynik to: ${score}`;
+}
+
+function HideOverlay() {
+	document.getElementById("overlay").style.display = "none";
 }

@@ -6,6 +6,7 @@
 		<title>Apple Game</title>
 		<script src="./script.js"></script>
 		<link rel="stylesheet" href="./style.css" />
+		<link rel="icon" href="./assets/apple.png" type="image/x-icon" />
 	</head>
 	<body onload="PlaceholderGrid()">
 		<header id="title">
@@ -19,6 +20,15 @@
 		<div id="timer">
 			<div id="timer_bg">
 				<div id="timer_val"></div>
+			</div>
+		</div>
+		<div id="overlay">
+			<div id="ending_screen">
+				<p id="end_text">
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt et modi possimus veniam quos eos itaque omnis,
+					ea, impedit corrupti autem aperiam voluptates provident saepe?
+				</p>
+				<button onclick="HideOverlay()" id="hide_button">Schowaj</button>
 			</div>
 		</div>
 		<footer><p>Paweł Przybylski 4i/1 2025</p></footer>
